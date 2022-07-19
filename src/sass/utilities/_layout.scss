@@ -1,0 +1,22 @@
+.container {
+  --container-max: 80ch;
+  
+  // width: 80ch;
+  // max-width: 95vw;
+  width: min(var(--container-max), 95vw);
+  margin-inline: auto;
+}
+
+section,
+.section {
+  margin-block: 8vh;
+}
+
+.layout-flex {
+  --gap: 2rem;
+  --wrap: wrap;
+
+  display: flex;
+  flex-wrap: var(--wrap);
+  gap: var(--gap);
+}

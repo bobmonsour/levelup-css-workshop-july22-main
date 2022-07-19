@@ -1,0 +1,42 @@
+{
+  "name": "levelup-css-workshop",
+  "version": "1.0.0",
+  "description": "Project for Stephanie Eckles' workshop: Level Up with Modern CSS",
+  "scripts": {
+    "tokens": "npx a11y-color-tokens --outputDirPath=src/sass --colorTokensPath=src/_data/colors.js --compatibilityDocsPath=src/docs",
+    "watch:sass": "sass --watch --no-source-map src/sass:public/css",
+    "watch:eleventy": "npx @11ty/eleventy --serve --quiet",
+    "build:sass": "sass --no-source-map src/sass:public/css",
+    "build:eleventy": "npx @11ty/eleventy",
+    "postbuild": "postcss public/css/*.css -r --no-map",
+    "start": "npm-run-all tokens build:sass --parallel watch:*",
+    "build": "npm-run-all tokens build:sass build:eleventy",
+    "lint": "stylelint src/sass/**/*.scss src/sass/**/**/*.scss src/sass/**/**/**/*.scss",
+    "lint:fix": "npm run lint --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "a11y-color-tokens": "^0.6.0",
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.12",
+    "npm-run-all": "^4.1.5",
+    "open-props": "^1.3.16",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0",
+    "postcss-logical": "^5.0.4",
+    "postcss-jit-props": "^1.0.7",
+    "sass": "^1.5.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.21.0"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "not IE 11"
+  ]
+}
